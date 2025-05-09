@@ -12,7 +12,7 @@ namespace CSharp_OOPs
 
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"Name: {Name}, Age: {Age}, Married: {IsMarried}");
+            Console.WriteLine($"Name: {this.Name}, Age: {this.Age}, Married: {this.IsMarried}");
         }
     }
 
@@ -26,31 +26,31 @@ namespace CSharp_OOPs
 
         public Employee(string name, int age, bool isMarried, string empCode, string deptCode, int salary, bool isActive)
         {
-            Name = name;
-            Age = age;
-            IsMarried = isMarried;
-            EmployeeCode = empCode;
-            DepartmentCode = deptCode;
-            Salary = salary;
-            IsActive = isActive;
+            this.Name = name;
+            this.Age = age;
+            this.IsMarried = isMarried;
+            this.EmployeeCode = empCode;
+            this.DepartmentCode = deptCode;
+            this.Salary = salary;
+            this.IsActive = isActive;
         }
 
         // Polymorphism: overriding method
         public override void DisplayInfo()
         {
-            //base.DisplayInfo();
-            Console.WriteLine($"Employee Code: {EmployeeCode}, Dept: {DepartmentCode}, Salary: {Salary}, Active: {IsActive}");
+            base.DisplayInfo();
+            Console.WriteLine($"Employee Code: {this.EmployeeCode}, Dept: {this.DepartmentCode}, Salary: {this.Salary}, Active: {this.IsActive}");
         }
 
         public void GiveRaise(int amount)
         {
             Salary += amount;
-            Console.WriteLine($"{Name} got a raise of {amount}. New Salary: {Salary}");
+            Console.WriteLine($"{this.Name} got a raise of {amount}. New Salary: {this.Salary}");
         }
 
         public void GetBasicInfo()
         {
-            Console.WriteLine($"{Name} of age: {Age}. IsMarried: {IsMarried}");
+            Console.WriteLine($"{this.Name} of age: {this.Age}. IsMarried: {this.IsMarried}");
         }
     }
 
